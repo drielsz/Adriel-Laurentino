@@ -1,0 +1,60 @@
+:root {
+    --primary-padding: clamp(1.5em, 4vw, 2.5em);
+    --animation-primary: all .5s cubic-bezier(.7, 0, .3, 1);
+}
+
+
+.rounded-div-wrap {
+    width: 100%;
+    top: 0;
+    position: relative;
+    height: 10vh;
+    overflow: hidden;
+}
+
+.rounded-div {
+    width: 150%;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: white;
+    height: 750%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -86.666%);
+    z-index: 1;
+}
+
+.barTop, .barMiddle, .barBottom {
+    width: 25px;
+    height: 1px;
+    background-color: #101010;
+    margin: 3px 0;
+    transition: var(--animation-primary)
+}
+
+.menu-icon {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.change .barTop {
+    transform: translate(0, 6px) rotate(-55deg);
+    transition: var(--animation-primary);
+    width: 20px
+}
+  
+.change .barMiddle {
+    opacity: 0;
+}
+  
+.change .barBottom {
+    transform: translate(0, -8px) rotate(50deg);
+    transition: var(--animation-primary);
+    width: 20px
+}
